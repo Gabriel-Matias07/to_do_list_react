@@ -1,13 +1,10 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [todos, setTodos] = useState([
+  const [todos, setTodo] = useState([
     {
       id: 1,
-      text: "criar funcionalidade x no sistema",
+      text: "Criar funcionalidade x no sistema",
       category: "Trabalho",
       isCompleted: false,
     },
@@ -30,8 +27,17 @@ function App() {
       <h1>Lista de Tarefas</h1>
       <div className='todo-list'>
         {todos.map((todo) => (
-          <div className='content' key={todo.id}>
-            <p>{todo.text}</p>
+          <div className="todo">
+            <div className="content">
+              <p>{todo.text}</p>
+              <p className="category">
+                ({todo.category})
+              </p> {/* Categoroa entre parenteses */}
+            </div>
+            <div>
+              <button>Completar</button>
+              <button>X</button>
+            </div>
           </div>
         ))}
       </div>
